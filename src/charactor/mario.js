@@ -8,7 +8,7 @@ export default function Mario(
 	)
 
 	//const mario = PIXI.Sprite.from('assets/mario-standing-r.png')
-	const ground = window.innerHeight - 165
+	const ground = 700 - 148
 	// mario.width = 50
 	// mario.height = 50
 
@@ -16,9 +16,6 @@ export default function Mario(
 	mario.y = ground
 	mario.vx = 0
 	mario.vy = 0
-
-	app.stage.addChild(mario)
-	app.stage.setChildIndex(mario, 1)
 
 	left.press = () => {
 		mario.texture = charactorRescources['assets/mario-standing-l.png'].texture
@@ -121,4 +118,7 @@ export default function Mario(
 		mario.x += mario.vx
 		mario.y += mario.vy
 	}
+
+	app.stage.addChild(mario)
+	app.stage.setChildIndex(mario, 1)
 }
