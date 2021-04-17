@@ -1,3 +1,6 @@
-require('./assets/mario.png')
+require('./assets/mario-standing-r.png')
+require('./assets/mario-standing-l.png')
+require('./assets/mario-sit-l.png')
+require('./assets/mario-sit-r.png')
 require('./index.js')
 require('./assets/background.jpg')

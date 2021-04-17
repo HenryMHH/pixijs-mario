@@ -20,14 +20,47 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./assets/mario.png":
-/*!**************************!*\
-  !*** ./assets/mario.png ***!
-  \**************************/
+/***/ "./assets/mario-sit-l.png":
+/*!********************************!*\
+  !*** ./assets/mario-sit-l.png ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"assets/mario.png\");\n\n//# sourceURL=webpack:///./assets/mario.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"assets/mario-sit-l.png\");\n\n//# sourceURL=webpack:///./assets/mario-sit-l.png?");
+
+/***/ }),
+
+/***/ "./assets/mario-sit-r.png":
+/*!********************************!*\
+  !*** ./assets/mario-sit-r.png ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"assets/mario-sit-r.png\");\n\n//# sourceURL=webpack:///./assets/mario-sit-r.png?");
+
+/***/ }),
+
+/***/ "./assets/mario-standing-l.png":
+/*!*************************************!*\
+  !*** ./assets/mario-standing-l.png ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"assets/mario-standing-l.png\");\n\n//# sourceURL=webpack:///./assets/mario-standing-l.png?");
+
+/***/ }),
+
+/***/ "./assets/mario-standing-r.png":
+/*!*************************************!*\
+  !*** ./assets/mario-standing-r.png ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"assets/mario-standing-r.png\");\n\n//# sourceURL=webpack:///./assets/mario-standing-r.png?");
 
 /***/ }),
 
@@ -38,7 +71,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ background)\n/* harmony export */ });\nfunction background(app) {\r\n\tapp.loader\r\n\t\t.add('mario', 'assets/background.jpg')\r\n\t\t.load((loader, resources) => {})\r\n}\r\n\n\n//# sourceURL=webpack:///./background/background.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Background)\n/* harmony export */ });\nfunction Background(app, rescources) {\r\n\tconst background = new PIXI.Sprite(rescources.texture)\r\n\tbackground.width = 1000\r\n\tbackground.height = 700\r\n\r\n\tapp.stage.addChildAt(background, 0)\r\n}\r\n\n\n//# sourceURL=webpack:///./background/background.js?");
 
 /***/ }),
 
@@ -49,7 +82,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ mario)\n/* harmony export */ });\nfunction mario(app, { left, right, jump }) {\r\n\tapp.loader.add('mario', 'assets/mario.png').load((loader, resources) => {\r\n\t\tconst mario = new PIXI.Sprite(resources.mario.texture)\r\n\r\n\t\tmario.width = 50\r\n\t\tmario.height = 50\r\n\r\n\t\tmario.x = 50\r\n\t\tmario.y = window.innerHeight - 100\r\n\t\tmario.vx = 0\r\n\t\tmario.vy = 0\r\n\r\n\t\t// mario.anchor.x = 0.5\r\n\t\t// mario.anchor.y = 0.5\r\n\r\n\t\tapp.stage.addChild(mario)\r\n\r\n\t\tleft.press = () => {\r\n\t\t\tmario.vx = -3\r\n\t\t\t//mario.vy = 0\r\n\t\t}\r\n\r\n\t\tleft.release = () => {\r\n\t\t\t//If the left arrow has been released, and the right arrow isn't down,\r\n\t\t\t//and the cat isn't moving vertically:\r\n\t\t\t//Stop the cat\r\n\t\t\tif (!right.isDown && mario.vy === 0) {\r\n\t\t\t\tmario.vx = 0\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tright.press = () => {\r\n\t\t\tmario.vx = 3\r\n\t\t\t//mario.vy = 0\r\n\t\t}\r\n\r\n\t\tright.release = () => {\r\n\t\t\t//If the left arrow has been released, and the right arrow isn't down,\r\n\t\t\t//and the cat isn't moving vertically:\r\n\t\t\t//Stop the cat\r\n\t\t\tif (!left.isDown && mario.vy === 0) {\r\n\t\t\t\tmario.vx = 0\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tjump.press = () => {\r\n\t\t\t//mario.vx = 0\r\n\t\t\t// if (\r\n\t\t\t// \t(mario.y === window.innerHeight - 100 && !left.isDown) ||\r\n\t\t\t// \t(mario.y === window.innerHeight - 100 && !right.isDown)\r\n\t\t\t// ) {\r\n\t\t\t// \tmario.vx = 0\r\n\t\t\t// }\r\n\t\t\tif (mario.y === window.innerHeight - 100) {\r\n\t\t\t\tmario.vy = -4\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tjump.release = () => {\r\n\t\t\t// mario.vx = 0\r\n\r\n\t\t\tmario.vy = 4\r\n\t\t}\r\n\t\t// Listen for frame updates\r\n\t\tapp.ticker.add((d) => {\r\n\t\t\t// each frame we spin the bunny around a bit\r\n\t\t\t//bunny.rotation += 0.01\r\n\t\t\tif (mario.y > window.innerHeight - 100) {\r\n\t\t\t\tmario.vy = 0\r\n\t\t\t\tmario.y = window.innerHeight - 100\r\n\r\n\t\t\t\tif (jump.isDown && !right.isDown && !left.isDown) {\r\n\t\t\t\t\tmario.vx = 0\r\n\t\t\t\t}\r\n\t\t\t\tif (!jump.isDown && !right.isDown && !left.isDown) {\r\n\t\t\t\t\tmario.vx = 0\r\n\t\t\t\t}\r\n\t\t\t}\r\n\r\n\t\t\tif (mario.y < window.innerHeight - 200) {\r\n\t\t\t\tmario.vy = 4\r\n\t\t\t}\r\n\r\n\t\t\tgameLoop(d)\r\n\t\t})\r\n\t\tlet state = play\r\n\t\tfunction gameLoop(delta) {\r\n\t\t\t//Update the current game state:\r\n\r\n\t\t\tstate(delta)\r\n\t\t}\r\n\r\n\t\tfunction play(delta) {\r\n\t\t\t//Use the cat's velocity to make it move\r\n\t\t\tmario.x += mario.vx\r\n\t\t\tmario.y += mario.vy\r\n\t\t}\r\n\t})\r\n}\r\n\n\n//# sourceURL=webpack:///./charactor/mario.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Mario)\n/* harmony export */ });\nfunction Mario(\r\n\tapp,\r\n\tcharactorRescources,\r\n\t{ left, right, jump, down }\r\n) {\r\n\tconst mario = new PIXI.Sprite(\r\n\t\tcharactorRescources['assets/mario-standing-r.png'].texture\r\n\t)\r\n\r\n\t//const mario = PIXI.Sprite.from('assets/mario-standing-r.png')\r\n\tconst ground = window.innerHeight - 165\r\n\t// mario.width = 50\r\n\t// mario.height = 50\r\n\r\n\tmario.x = 50\r\n\tmario.y = ground\r\n\tmario.vx = 0\r\n\tmario.vy = 0\r\n\r\n\tapp.stage.addChild(mario)\r\n\r\n\tleft.press = () => {\r\n\t\tmario.texture = charactorRescources['assets/mario-standing-l.png'].texture\r\n\t\t//PIXI.Texture.from('assets/mario-standing-l.png')\r\n\t\tmario.vx = -6\r\n\t\t//mario.vy = 0\r\n\t}\r\n\r\n\tleft.release = () => {\r\n\t\tif (!right.isDown && mario.vy === 0) {\r\n\t\t\tmario.vx = 0\r\n\t\t}\r\n\t}\r\n\r\n\tright.press = () => {\r\n\t\tmario.texture = charactorRescources['assets/mario-standing-r.png'].texture\r\n\t\tmario.vx = 6\r\n\r\n\t\t//mario.vy = 0\r\n\t}\r\n\r\n\tright.release = () => {\r\n\t\tif (!left.isDown && mario.vy === 0) {\r\n\t\t\tmario.vx = 0\r\n\t\t}\r\n\t}\r\n\r\n\tdown.press = () => {\r\n\t\tif (\r\n\t\t\tmario.texture ===\r\n\t\t\tcharactorRescources['assets/mario-standing-l.png'].texture\r\n\t\t) {\r\n\t\t\tmario.texture = charactorRescources['assets/mario-sit-l.png'].texture\r\n\t\t}\r\n\t}\r\n\r\n\tdown.release = () => {\r\n\t\tif (\r\n\t\t\tmario.texture === charactorRescources['assets/mario-sit-l.png'].texture\r\n\t\t) {\r\n\t\t\tmario.texture = charactorRescources['assets/mario-standing-l.png'].texture\r\n\t\t}\r\n\t}\r\n\r\n\tjump.press = () => {\r\n\t\tif (mario.y === ground) {\r\n\t\t\tmario.vy = -8\r\n\t\t}\r\n\t}\r\n\r\n\tjump.release = () => {\r\n\t\tmario.vy = 8\r\n\t}\r\n\r\n\tlet time = Number()\r\n\tapp.ticker.add((d) => {\r\n\t\tif (mario.y > ground) {\r\n\t\t\tmario.vy = 0\r\n\t\t\tmario.y = ground\r\n\r\n\t\t\tif (jump.isDown && !right.isDown && !left.isDown) {\r\n\t\t\t\tmario.vx = 0\r\n\t\t\t}\r\n\t\t\tif (!jump.isDown && !right.isDown && !left.isDown) {\r\n\t\t\t\tmario.vx = 0\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (mario.x >= 950) {\r\n\t\t\tmario.x = 950\r\n\t\t}\r\n\r\n\t\tif (mario.x <= 0) {\r\n\t\t\tmario.x = 0\r\n\t\t}\r\n\r\n\t\tif (mario.y < ground - 150) {\r\n\t\t\tmario.vy = 8\r\n\t\t}\r\n\r\n\t\tgameLoop()\r\n\t})\r\n\tlet state = play\r\n\tfunction gameLoop(delta) {\r\n\t\tstate(delta)\r\n\t}\r\n\r\n\tfunction play(delta) {\r\n\t\tmario.x += mario.vx\r\n\t\tmario.y += mario.vy\r\n\t}\r\n}\r\n\n\n//# sourceURL=webpack:///./charactor/mario.js?");
 
 /***/ }),
 
@@ -59,7 +92,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("__webpack_require__(/*! ./assets/mario.png */ \"./assets/mario.png\")\r\n__webpack_require__(/*! ./index.js */ \"./index.js\")\r\n__webpack_require__(/*! ./assets/background.jpg */ \"./assets/background.jpg\")\r\n\n\n//# sourceURL=webpack:///./entry.js?");
+eval("__webpack_require__(/*! ./assets/mario-standing-r.png */ \"./assets/mario-standing-r.png\")\r\n__webpack_require__(/*! ./assets/mario-standing-l.png */ \"./assets/mario-standing-l.png\")\r\n__webpack_require__(/*! ./assets/mario-sit-l.png */ \"./assets/mario-sit-l.png\")\r\n__webpack_require__(/*! ./assets/mario-sit-r.png */ \"./assets/mario-sit-r.png\")\r\n__webpack_require__(/*! ./index.js */ \"./index.js\")\r\n__webpack_require__(/*! ./assets/background.jpg */ \"./assets/background.jpg\")\r\n\n\n//# sourceURL=webpack:///./entry.js?");
 
 /***/ }),
 
@@ -70,7 +103,7 @@ eval("__webpack_require__(/*! ./assets/mario.png */ \"./assets/mario.png\")\r\n_
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _charactor_mario__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./charactor/mario */ \"./charactor/mario.js\");\n/* harmony import */ var _movement_movement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./movement/movement */ \"./movement/movement.js\");\n/* harmony import */ var _background_background__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./background/background */ \"./background/background.js\");\n\r\n\r\n\r\n\r\nconst app = new PIXI.Application()\r\ndocument.body.appendChild(app.view)\r\napp.renderer.view.style.position = 'absolute'\r\napp.renderer.view.style.display = 'block'\r\napp.renderer.autoResize = true\r\napp.renderer.resize(window.innerWidth, window.innerHeight)\r\n// load the texture we need\r\n;(0,_charactor_mario__WEBPACK_IMPORTED_MODULE_0__.default)(app, (0,_movement_movement__WEBPACK_IMPORTED_MODULE_1__.default)())\r\n;(0,_background_background__WEBPACK_IMPORTED_MODULE_2__.default)(app)\r\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _charactor_mario__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./charactor/mario */ \"./charactor/mario.js\");\n/* harmony import */ var _movement_movement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./movement/movement */ \"./movement/movement.js\");\n/* harmony import */ var _background_background__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./background/background */ \"./background/background.js\");\n\r\n\r\n\r\n\r\nconst app = new PIXI.Application()\r\ndocument.body.appendChild(app.view)\r\napp.renderer.view.style.position = 'absolute'\r\napp.renderer.view.style.display = 'block'\r\napp.renderer.autoResize = true\r\napp.renderer.resize(1000, 700)\r\n// load the texture we need\r\n\r\napp.loader\r\n\t.add([\r\n\t\t'assets/mario-standing-r.png',\r\n\t\t'assets/mario-standing-l.png',\r\n\t\t'assets/background.jpg',\r\n\t\t'assets/mario-sit-l.png',\r\n\t\t'assets/mario-sit-r.png',\r\n\t])\r\n\t.load((loader, resources) => {\r\n\t\t;(0,_charactor_mario__WEBPACK_IMPORTED_MODULE_0__.default)(app, resources, (0,_movement_movement__WEBPACK_IMPORTED_MODULE_1__.default)())\r\n\t\t;(0,_background_background__WEBPACK_IMPORTED_MODULE_2__.default)(app, resources['assets/background.jpg'])\r\n\t})\r\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
