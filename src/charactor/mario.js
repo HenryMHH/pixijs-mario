@@ -17,7 +17,8 @@ export default function Mario(
 	mario.vx = 0
 	mario.vy = 0
 
-	app.stage.addChildAt(mario, 0)
+	app.stage.addChild(mario)
+	app.stage.setChildIndex(mario, 1)
 
 	left.press = () => {
 		mario.texture = charactorRescources['assets/mario-standing-l.png'].texture

@@ -3,5 +3,5 @@ export default function Background(app, rescources) {
 	background.width = 1000
 	background.height = 700
 
-	app.stage.addChildAt(background, 0)
+	app.stage.addChild(background)
 }

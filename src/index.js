@@ -19,6 +19,6 @@ app.loader
 		'assets/mario-sit-r.png',
 	])
 	.load((loader, resources) => {
-		mario(app, resources, keyboard())
 		background(app, resources['assets/background.jpg'])
+		mario(app, resources, keyboard())
 	})
